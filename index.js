@@ -96,14 +96,12 @@ class Airplane {
       if(distance > miles){
         this.tank = 0
         this.odometer = miles
+        return `I ran out of fuel at ${miles} miles!`
 
       }else if (distance <= miles){
         this.tank / fuel
         this.odometer = distance
       }
-      if (distance > miles){
-        return `I ran out of fuel at ${miles} miles!`
-      };
     }
   }
   
