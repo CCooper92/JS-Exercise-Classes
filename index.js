@@ -87,8 +87,23 @@ class Airplane {
       this.tank += gallons;
     }
     drive(distance){
-      this.odometer += distance;
+      const fuel = this.tank/this.milesPerGallon
+      const miles = this.milesPerGallon * this.tank
+      this.odometer += distance
+      this.tank -= distance / this.milesPerGallon;
       
+
+      if(distance > miles){
+        this.tank = 0
+        this.odometer = miles
+
+      }else if (distance <= miles){
+        this.tank / fuel
+        this.odometer = distance
+      }
+      if (distance > miles){
+        return `I ran out of fuel at ${miles} miles!`
+      };
     }
   }
   
